@@ -8,4 +8,6 @@ db.serialize(function () {
     db.run("CREATE TABLE IF NOT EXISTS RESTAURANTS (id INTEGER PRIMARY KEY, name TEXT, imagelink TEXT)");
     db.run("CREATE TABLE IF NOT EXISTS MENUS (id INTEGER PRIMARY KEY, title TEXT, restaurantId INT, FOREIGN KEY (restaurantId) references RESTAURANTS(id))");
     db.run("CREATE TABLE IF NOT EXISTS MENU_ITEMS (id INTEGER PRIMARY KEY, menuId INT, name TEXT, price REAL, FOREIGN KEY (menuId) references MENUS(id))");
+
+    db.close();
 });

@@ -8,4 +8,6 @@ db.serialize(function () {
     db.run("DELETE FROM RESTAURANTS")
     db.run("DELETE FROM MENUS")
     db.run("DELETE FROM MENU_ITEMS")
+
+    db.close();
 });
